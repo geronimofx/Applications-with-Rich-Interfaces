@@ -13,10 +13,11 @@
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
         crossorigin="anonymous"
         />
-        <script src="js/scripts.js" defer></script>
+        <script src="./app.js" defer></script>
     </head>
     <body id="page">    
-        <div id="order-form-container" class="container p-6 my-md-4 px-md-0">
+        <div id="form-container" class="container p-6 my-md-4 px-md-0">
+            <h1>Buscador de CEP</h1>
             <div id="form-header">
                 <h2>Informe seu CEP</h2>
                 <p>Digite seu CEP abaixo para obter as informações do seu endereço</p>
@@ -25,14 +26,15 @@
                 <div class="row mb-3">
                     <div class="form-floating">
                         <input
-                        type="text"
-                        class="form-control shadow-none"
-                        id="cep"
-                        name="cep"
-                        placeholder="Digite o seu CEP"
-                        maxlength="8"
-                        minlength="8"
-                        required
+                            type="text"
+                            class="form-control shadow-none"
+                            id="cep"
+                            name="cep"
+                            placeholder="Digite o seu CEP"
+                            maxlength="9"
+                            minlength="8"
+                            required
+                            onChange="{(e) => setCPF(maskCPF(e.target.value))}"
                         />
                         <label for="cep">Digite o seu CEP</label>
                     </div>
@@ -40,27 +42,25 @@
                 <div class="row mb-3">
                     <div class="col-12 col-sm-6 mb-3 mb-md-0 form-floating">
                         <input
-                        type="text"
-                        class="form-control shadow-none"
-                        id="address"
-                        name="address"
-                        placeholder="Rua"
-                        disabled
-                        required
-                        data-input
+                            type="text"
+                            class="form-control shadow-none"
+                            id="address"
+                            name="address"
+                            placeholder="Rua"
+                            disabled
+                            required
                         />
                         <label for="address">Logradouro</label>
                     </div>
                     <div class="col-12 col-sm-6 form-floating">
                         <input
-                        type="text"
-                        class="form-control shadow-none"
-                        id="number"
-                        name="number"
-                        placeholder="Digite o número da residência"
-                        disabled
-                        required
-                        data-input
+                            type="text"
+                            class="form-control shadow-none"
+                            id="number"
+                            name="number"
+                            placeholder="Digite o número da residência"
+                            required
+                            data-input
                         />
                         <label for="number">Número da residência</label>
                     </div>
@@ -68,38 +68,52 @@
                 <div class="row mb-3">
                     <div class="col-12 col-sm-6 mb-3 mb-md-0 form-floating">
                         <input
-                        type="text"
-                        class="form-control shadow-none"
-                        id="city"
-                        name="city"
-                        placeholder="Cidade"
-                        disabled
-                        required
-                        data-input
+                            type="text"
+                            class="form-control shadow-none"
+                            id="city"
+                            name="city"
+                            placeholder="Cidade"
+                            disabled
+                            required
+                            data-input
                         />
                         <label for="city">Cidade</label>
                     </div>
                     <div class="col-12 col-sm-6 form-floating">
                         <input
-                        type="text"
-                        class="form-control shadow-none"
-                        id="neighborhood"
-                        name="neighborhood"
-                        placeholder="Bairro"
-                        disabled
-                        required
-                        data-input
+                            type="text"
+                            class="form-control shadow-none"
+                            id="uf"
+                            name="uf"
+                            placeholder="Estado"
+                            disabled
+                            required
+                            data-input
                         />
-                        <label for="neighborhood">Bairro</label>
+                        <label for="uf">Estado</label>
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <div class="form-floating">
+                    <div class="col-12 col-sm-6 mb-3 mb-md-0 form-floating">
+                        <input
+                            type="text"
+                            class="form-control shadow-none"
+                            id="neighborhood"
+                            name="neighborhood"
+                            placeholder="Bairro"
+                            disabled
+                            required
+                            data-input
+                        />
+                        <label for="neighborhood">Bairro</label>
+                    </div>
+                    <div class="col-12 col-sm-6 form-floating">
                         <textarea 
                             class="form-control" 
                             placeholder="Digite o complemento" 
                             id="complement"
                             name="complement"
+                            maxlength="240"
                         ></textarea>
                         <label for="complement">Complemento</label>
                     </div>

@@ -18,48 +18,55 @@
 }
 
 /* Formulário */
-#order-form-container {
+#form-container {
     max-width: 700px;
     height: 90vh;
     padding-top: 7%;
 }
 
-#order-form-container input,
-#order-form-container select {
+#form-container h1 {
+    margin-bottom: 3rem;
+    margin-left: 25%;
+}
+
+#form-container input,
+#form-container select {
     background-color: var(--bg-color);
     border: 2px solid var(--border-color);
     color: var(--primary-color);
 }
 
-#order-form-container select {
+#form-container select {
     padding: 1rem 0.75rem;
 }
 
-#order-form-container label {
+#form-container label {
     color: var(--text-color);
 }
 
-#order-form-container input:disabled,
-#order-form-container select:disabled {
+#form-container input:disabled,
+#form-container input,
+#form-container select:disabled {
     background-color: var(--secondary-bg-color);
     color: var(--text-color);
 }
 
-#order-form-container input:focus {
+#form-container input:focus {
     border-color: var(--secondary-color);
 }
 
-#order-form-container .form-floating > label {
+#form-container .form-floating > label {
     left: 1em;
 }
 
 #complement {
-    height: 150px
+    resize: none;
 }
 
 /* Responsive */
-@media (min-width: 500px) {
-    #save-btn {
-        width: 8em;
+@media (max-width: 500px) {
+
+    #form-container h1 {
+        margin-left: 0;
     }
 }
