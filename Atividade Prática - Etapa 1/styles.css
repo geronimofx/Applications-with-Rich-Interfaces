@@ -1,0 +1,65 @@
+:root {
+    --bg-color: #000000;
+    --secondary-bg-color: #FFFFFF;
+    --primary-color: #B372CA;
+    --secondary-color: #25cc88;
+    --text-color: #B372CA;
+    --border-color: #20235b;
+}
+
+#page {
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+}
+
+/* Titulo do fórmulário */
+#form-header p {
+    color: var(--text-color);
+}
+
+/* Formulário */
+#order-form-container {
+    max-width: 700px;
+    height: 90vh;
+    padding-top: 7%;
+}
+
+#order-form-container input,
+#order-form-container select {
+    background-color: var(--bg-color);
+    border: 2px solid var(--border-color);
+    color: var(--primary-color);
+}
+
+#order-form-container select {
+    padding: 1rem 0.75rem;
+}
+
+#order-form-container label {
+    color: var(--text-color);
+}
+
+#order-form-container input:disabled,
+#order-form-container select:disabled {
+    background-color: var(--secondary-bg-color);
+    color: var(--text-color);
+}
+
+#order-form-container input:focus {
+    border-color: var(--secondary-color);
+}
+
+#order-form-container .form-floating > label {
+    left: 1em;
+}
+
+#complement {
+    height: 150px
+}
+
+/* Responsive */
+@media (min-width: 500px) {
+    #save-btn {
+        width: 8em;
+    }
+}
